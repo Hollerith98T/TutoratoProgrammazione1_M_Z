@@ -1,0 +1,9 @@
+[ESERCIZIO 1] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm e un intero k e che restituisca true se esiste almeno una riga di A avente la somma degli elementi maggiore o uguale a k
+
+[ESERCIZIO 2] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm e un intero k e restituisca true se l'elemento k è presente nella matrice A
+
+[ESERCIZIO 3] - Scrivere un metodo che prenda in input una matrice A, di dimensione nxm, di puntatori a interi e un parametro intero k e che restituisca true se la somma dei valori puntati in almeno una riga della matrice è minore o uguale al parametro k
+
+[ESERCIZIO 4] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori a interi e restituisca la somma del prodotto degli elementi nelle righe
+
+[ESERCIZIO 5] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori doppi a interi e restituisca il somma del prodotto delle colonne
