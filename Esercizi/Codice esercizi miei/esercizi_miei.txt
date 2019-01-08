@@ -6,4 +6,6 @@
 
 [ESERCIZIO 4] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori a interi e restituisca la somma del prodotto degli elementi nelle righe
 
-[ESERCIZIO 5] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori doppi a interi e restituisca il somma del prodotto delle colonne
+[ESERCIZIO 5] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori doppi a interi e restituisca la somma del prodotto delle colonne
+
+[ESERCIZIO 6] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori a stringhe e un carattere x, e restituisca la somma delle occorrenze di x in A
