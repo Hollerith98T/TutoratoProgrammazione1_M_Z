@@ -9,3 +9,10 @@
 [ESERCIZIO 5] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori doppi a interi e restituisca la somma del prodotto delle colonne
 
 [ESERCIZIO 6] - Scrivere un metodo che prenda in input una matrice A di dimensione nxm di puntatori a stringhe e un carattere x, e restituisca la somma delle occorrenze di x in A
+
+[ESERCIZIO 7] - Scrivere un metodo che prenda in input una matrice A di doppi puntatori a caratteri e restituisca la somma dei caratteri ripetuti in ogni colonna
+
+
+[ESERCIZIO 8] - Scrivere un metodo che prenda in input un array di dimensione nxnxn e ritorni true se esiste almeno una matrice avente la somma degli elementi della diagonale principale multiplo di 5 
+
+[ESERCIZIO 9] - Scrivere un metodo che prenda in input un array di stringhe di dimensione nxnxn e restituisca la somma del numero dei caratteri della diagonale principale di ogni matrice
