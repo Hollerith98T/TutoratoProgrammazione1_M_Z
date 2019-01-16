@@ -20,8 +20,6 @@ public:
 	A(int i){
 		x=i;
 	}
-
-	int getX(){return x;}
 	virtual int f() const = 0;
 	virtual ostream &put(ostream &s) const{
 		stringstream ss;
@@ -41,8 +39,6 @@ public:
 		b = c;
 	}
 
-	char getB(){return b;}
-
 	int f() const{
 		if(x%2==0) return (int)b;
 		return (int)(b*2);
@@ -56,7 +52,9 @@ public:
 
 	ostream &put(ostream &s) const{
 		stringstream ss;
-		ss << "Class B: " << A::put(ss) << "f(): " << f() <<endl;
+		ss << "Class B: ";
+		A::put(ss);
+		ss << "f(): " << f() <<endl;
 		return s << ss.str();
 	}
 
@@ -72,8 +70,6 @@ public:
 	C(int i, T t) : A(i){
 		c = t;
 	}
-
-	T getC(){return c;}
 
 	int f() const{
 		return x+((int)(c)*20);
@@ -138,9 +134,13 @@ int main(){
 	cout<< endl<<"max: "<< max <<endl;
 	cout<< endl<<"tmp: "<< tmp <<endl;
 
-	B b(5,'a');
-	cout<< endl<<b.getX()<<endl;
-	cout<< endl<<(b++).getX()<<endl;
+	A* a = new B(5,'a');
+	cout<< endl<< a <<endl;
+
+	B* b = dynamic_cast<B*>(a);
+	B new_b = (*b)++;
+	a = &new_b;
+	cout<< a <<endl;
 
 
 
