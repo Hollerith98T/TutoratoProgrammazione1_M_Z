@@ -1,3 +1,8 @@
+/*
+ *	Esame programmazione 1 laboratorio - Esame 3
+ *	Alessandro Lauria
+ */
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -38,9 +43,9 @@ public:
 	}
 
 	B operator++(int){
-		B* obj = this;
-		obj->x+=1;
-		return *obj;
+		B obj = *this;
+		obj.x+=1;
+		return obj;
 	}
 
 };
@@ -120,8 +125,7 @@ int main(){
 
 	B b(5,'a');
 	cout<< endl<<b.getX()<<endl;
-	b++;
-	cout<< endl<<b.getX()<<endl;
+	cout<< endl<<(b++).getX()<<endl;
 
 
 
