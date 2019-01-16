@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 
@@ -21,7 +22,12 @@ public:
 	}
 
 	int getX(){return x;}
-	virtual const int f() = 0 ;
+	virtual int f() const = 0;
+	virtual ostream &put(ostream &s) const{
+		stringstream ss;
+		ss << "x: "<<this->x<<" ";
+		return s << ss.str();
+	}
 };
 
 
@@ -37,7 +43,7 @@ public:
 
 	char getB(){return b;}
 
-	const int f(){
+	int f() const{
 		if(x%2==0) return (int)b;
 		return (int)(b*2);
 	}
@@ -48,9 +54,15 @@ public:
 		return obj;
 	}
 
+	ostream &put(ostream &s) const{
+		stringstream ss;
+		ss << "Class B: " << A::put(ss) << "f(): " << f() <<endl;
+		return s << ss.str();
+	}
+
 };
 
-template <class T> class C : public A{
+template <typename T> class C : public A{
 
 private:
 	T c;
@@ -63,30 +75,33 @@ public:
 
 	T getC(){return c;}
 
-	const int f(){
+	int f() const{
 		return x+((int)(c)*20);
 	}
 
-	const T f(double eps){
+	T f(double eps) const{
 		if(typeid(c)==typeid(char)) return c+1;
 		return (T)(f()+eps);
 	}
 
+	ostream &put(ostream &s) const{
+		stringstream ss;
+
+		string type = "";
+		if(typeid(T)==typeid(char))type="char";
+		else type="double";
+
+		ss << "Class C<"<<type<<">: ";
+		A::put(ss);
+		ss << "f(): " << f()<< " f(0.03):"<< f(0.03) <<endl;
+		return s << ss.str();
+	}
+
 };
 
-ostream& operator<<(ostream& os, A* a){
+ostream& operator<<(ostream& os, const A* a){
 
-	if(C<char>* obj = dynamic_cast<C<char>*>(a)){
-		if(typeid(obj->getC())==typeid(char)){
-			return os << "Class C<char>: x: " << obj->getX() << " c: " << obj->getC() << " f(): "<<obj->f()<<" f(0.03)"<<obj->f(0.03)<<endl;
-		}
-	}
-
-	if(B* b = dynamic_cast<B*>(a)){
-		return os << "Class B: x: " << b->getX() << " c: " << b->getB() << " f(): "<<b->f()<<endl;
-	}
-
-	return os << "Class C<>: x: " << a->getX() << " c: " << " f(): "<<a->f()<<endl;
+	return a->put(os);
 
 }
 
