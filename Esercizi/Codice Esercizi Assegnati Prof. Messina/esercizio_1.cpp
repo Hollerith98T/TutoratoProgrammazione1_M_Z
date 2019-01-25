@@ -18,7 +18,7 @@ void print(int*** A){
 
 }
 
-bool esercizio_1(int*** A, double w){
+bool esercizio_1(int*** A, double w, int k, int n){
 
 	for(int i=0; i<k; i++){
 		int max = 0;
