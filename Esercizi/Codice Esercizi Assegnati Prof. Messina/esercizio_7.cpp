@@ -5,7 +5,7 @@ using namespace std;
 int n = 3;
 int m = 3;
 
-bool esercizio_7(string*** S, short w, short k){
+bool esercizio_7(string*** S, int n, int m, short w, short k){
 
 	bool row_found = false;
 	bool col_found = false;
