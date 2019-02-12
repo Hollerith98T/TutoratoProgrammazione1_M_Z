@@ -1,3 +1,7 @@
+/*
+ * Esame 16/03/2018
+ * Alessandro Lauria
+ */
 #include <iostream>
 #include <string>
 #include <cmath>
