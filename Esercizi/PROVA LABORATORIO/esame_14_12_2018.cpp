@@ -7,6 +7,8 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include <stdlib.h>
+#include <typeinfo>
 using namespace std;
 
 #define DIM 10
